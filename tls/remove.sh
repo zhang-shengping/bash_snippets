@@ -43,8 +43,8 @@ for x in ${!containers[@]}; do
 done
 
 listeners=($(neutron lbaas-listener-list | grep pzhang | awk -F "|" '{print $2}'))
-for lsr in ${!loadbalancers[@]}; do
-  neutron lbaas-listener-delete ${loadbalancers[$lsr]}
+for lsr in ${!listeners[@]}; do
+  neutron lbaas-listener-delete ${listeners[$lsr]}
 done
 
 sleep 10
