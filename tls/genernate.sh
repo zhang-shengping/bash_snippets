@@ -106,7 +106,7 @@ neutron lbaas-loadbalancer-create $(neutron subnet-list | awk '/ vlan30_subnet /
 
 sleep 15
 
-echo "Create loadbalancer ${LISTENER_NAME}"
+echo "Create listener ${LISTENER_NAME}"
 neutron lbaas-listener-create --loadbalancer ${LB_NAME} --protocol-port 443 --protocol TERMINATED_HTTPS --name ${LISTENER_NAME} \
   --default-tls-container-ref=${SERVER_CERT_CREF} \
   --sni-container-refs=${SERVER_SNI_CERT_CREF} \
